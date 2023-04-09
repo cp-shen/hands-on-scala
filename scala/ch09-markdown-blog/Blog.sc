@@ -1,10 +1,17 @@
 #!/usr/bin/env -S scala-cli shebang
 
+//> using scala "2.13"
+//> using jvm "system"
+//> using repository "https://maven.aliyun.com/repository/public/" 
+//> using dep "com.lihaoyi::os-lib::0.9.1"
+//> using dep "com.lihaoyi::scalatags::0.12.0"
+//> using dep "com.atlassian.commonmark:commonmark:0.17.0"
+
 import scalatags.Text.all._
 
 println("rendering POSTS...")
 
-val cwd = os.pwd / "scala" / "ch09"
+val cwd = os.pwd 
 
 val postInfo = os
   .list(cwd / "post")
@@ -55,7 +62,7 @@ for ((_, suffix, path) <- postInfo) {
   )
 }
 
-def pushPosts() {
+def pushPosts() = {
   val targetGitRepo = if (args.length >= 1) args(0) else ""
   val targetGitBranch = if (args.length >= 2) args(1) else "master"
 

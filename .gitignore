@@ -2,4 +2,6 @@
 .metals/
 .scala-build/
 .direnv/
+.idea/
+.vscode/
 out/
