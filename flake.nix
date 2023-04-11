@@ -16,6 +16,7 @@
           (scala-cli.override { jre = jdkToUse; })
           (coursier.override { jre = jdkToUse; })
           (metals.override { jre = jdkToUse; })
+          (scalafmt.override { jre = jdkToUse; })
         ];
         scalaJsDeps = with pkgs; [
           nodejs
